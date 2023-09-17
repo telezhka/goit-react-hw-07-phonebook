@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import css from '../css/Form.module.css';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { isContactNameUnique } from 'redux/selectors';
 
 export const Form = () => {
@@ -32,7 +32,8 @@ export const Form = () => {
       return;
     }
     console.log(contact);
-    dispatch(addContact(contact));
+    dispatch(addContact({ name, number }));
+    // dispatch(addContact(number));
     setName('');
     setNumber('');
   };
