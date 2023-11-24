@@ -43,7 +43,7 @@ const handleRejected = (state, action) => {
 // export const contactsReducer = contactsSlice.reducer;
 
 const contactsSlice = createSlice({
-  name: 'tasks',
+  name: 'contacts',
   initialState: {
     items: [],
     isLoading: false,
