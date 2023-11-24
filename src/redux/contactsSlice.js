@@ -14,33 +14,7 @@ const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
-// const contactsSlice = createSlice({
-//   name: 'contacts',
-//   initialState: contactsInitialState,
-//   reducers: {
-//     addContact: {
-//       reducer(state, action) {
-//         state.push(action.payload);
-//       },
-//       prepare(contact) {
-//         return {
-//           payload: {
-//             contact,
-//             id: nanoid(),
-//           },
-//         };
-//       },
-//     },
-//     deleteContact(state, action) {
-//       const index = state.findIndex(contact => contact.id === action.payload);
-//       state.splice(index, 1);
-//     },
-//   },
-// });
 
-// export const { addContact, deleteContact, filterContact } =
-//   contactsSlice.actions;
-// export const contactsReducer = contactsSlice.reducer;
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -74,16 +48,7 @@ const contactsSlice = createSlice({
       state.items.splice(index, 1);
     },
     [deleteContact.rejected]: handleRejected,
-    // [toggleCompleted.pending]: handlePending,
-    // [toggleCompleted.fulfilled](state, action) {
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   const index = state.items.findIndex(
-    //     task => task.id === action.payload.id
-    //   );
-    //   state.items.splice(index, 1, action.payload);
-    // },
-    // [toggleCompleted.rejected]: handleRejected,
+
   },
 });
 
